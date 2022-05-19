@@ -50959,4 +50959,4 @@ const pokemon = [
     }
   ];
 
-  module.export = pokemon;
+  module.exports = pokemon;

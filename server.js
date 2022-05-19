@@ -1,26 +1,27 @@
-const express = require('express');
+const express = require("express");
 const app = express();
-const pokemon = require('./models/pokemon.js');
+const pokemon = require("./models/pokemon.js");
+const methodOverride = require("method-override");
 const port = 3000;
 
 app.use(express.urlencoded({ extended: false }));
-
+app.use(methodOverride("_method"));
 
 // Index
 app.get("/pokemon/", (req, res) => {
-    res.render("index.ejs", {
-        allPokemon: pokemon,
-    });
+	res.render("index.ejs", {
+		allPokemon: pokemon,
+	});
 });
 
 // New
 app.get("/pokemon/new/", (req, res) => {
-    res.render("new.ejs");
+	res.render("new.ejs");
 });
 
 // Delete
 app.delete("/pokemon/:id/", (req, res) => {
-    pokemon.splice(req.params.index, 1);
+	pokemon.splice(req.params.index, 1);
 	//redirect back to index route
 	res.redirect("/pokemon/");
 });
@@ -48,11 +49,11 @@ app.get("/pokemon/:id/edit", (req, res) => {
 
 // Show
 app.get("/pokemon/:id/", (req, res) => {
-    res.render("show.ejs", {
-        pokemons: pokemon[req.params.id],
-    });
+	res.render("show.ejs", {
+		pokemons: pokemon[req.params.id],
+	});
 });
 
 app.listen(port, () => {
-    console.log("listen on port", port)
+	console.log("listen on port", port);
 });

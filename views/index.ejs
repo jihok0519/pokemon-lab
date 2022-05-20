@@ -6,24 +6,36 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" />
+	<link href="http://fonts.cdnfonts.com/css/pokemon-solid" rel="stylesheet">
 		<title>PokeDex</title>
 	</head>
 	<h1>Pokedex</h1>
 	<body>
-		<ul>
+		<a href="/pokemon/new">Create a New Pokemon</a>
+		<table>
+			<tr>
 			<% for(let i = 0; i < allPokemon.length - 135; i++) { %>
-			<li>
+			<td>
 				<div><%=allPokemon[i].name%></div>
                 <img src="<%= allPokemon[i].img %>">
                 <form action ="/pokemon/<%=i; %>?_method=DELETE" method="POST">
                     <input type="submit" value="DELETE" />
                 <button><a href="/pokemon/<%=i; %>/edit">Edit</a></button>
-            </li>
+				</td>
+				</tr>
 			<% } %>
-		</ul>
-		<a href="/pokemon/">Back to Pokedex</a>
+		</table>
         <nav>
-            <a href="/pokemon/new">Create a New Pokemon</a>
         </nav>
 	</body>
 </html>
+
+<style>
+	body {
+		font-family: 'Pokemon Solid', sans-serif;
+	}
+	@import url('http://fonts.cdnfonts.com/css/pokemon-solid');
+	ul {
+		list-style-type: none;
+	}
+</style>

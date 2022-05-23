@@ -9,33 +9,50 @@
 	<link href="http://fonts.cdnfonts.com/css/pokemon-solid" rel="stylesheet">
 		<title>PokeDex</title>
 	</head>
-	<h1>Pokedex</h1>
 	<body>
+		<h1>Pokedex</h1>
+		<div class="container">
 		<a href="/pokemon/new">Create a New Pokemon</a>
 		<table>
 			<tr>
 			<% for(let i = 0; i < allPokemon.length - 135; i++) { %>
 			<td>
 				<div><%=allPokemon[i].name%></div>
-                <img src="<%= allPokemon[i].img %>">
-                <form action ="/pokemon/<%=i; %>?_method=DELETE" method="POST">
+                <a href="/pokemon/<%=i%>"><img src="<%= allPokemon[i].img %>"></a>
+                <form action ="/pokemon/<%=i %>?_method=DELETE" method="POST">
                     <input type="submit" value="DELETE" />
-                <button><a href="/pokemon/<%=i; %>/edit">Edit</a></button>
+                <button><a href="/pokemon/<%=i %>/edit">Edit Pokemon</a></button>
 				</td>
 				</tr>
 			<% } %>
 		</table>
-        <nav>
-        </nav>
+		</div>
 	</body>
 </html>
 
 <style>
+	.container {
+		display: grid;
+	}
 	body {
 		font-family: 'Pokemon Solid', sans-serif;
+		background-image: url("https://imgur.com/UZKEjzG.jpg");
+		-webkit-background-size: cover;
+  		-moz-background-size: cover;
+  		-o-background-size: cover;
+  		background-size: cover;
 	}
 	@import url('http://fonts.cdnfonts.com/css/pokemon-solid');
 	ul {
 		list-style-type: none;
+	}
+	img {
+        border-style: solid;
+        border-radius: 15px;
+        border-width: 4px;
+		width: 100px;
+    }
+	table {
+		display: flex;
 	}
 </style>

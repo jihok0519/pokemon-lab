@@ -4,71 +4,60 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" />
-    <link href="http://fonts.cdnfonts.com/css/pokemon-solid" rel="stylesheet">
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"
+		/>
+		<link href="http://fonts.cdnfonts.com/css/pokemon-solid" rel="stylesheet" />
 		<title>Add New Pokemon</title>
 	</head>
 	<h1>Add New Pokemon!</h1>
 	<body>
 		<form action="/pokemon/" method="POST">
+			Image:
+			<input type="text" name="img" Placeholder="URL" /><br />
 			Name:
-			<input
-				type="text"
-				name="name"
-				Placeholder="Name"
-			/><br />
+			<input type="text" name="name" Placeholder="Name" /><br />
 			HP stat:
-			<input
-				type="text"
-				name="stats"
-				placeholder="HP"
-			/><br />
+			<input type="text" name="stats" placeholder="HP" /><br />
 			Attack stat:
-			<input
-				type="text"
-				name="stats"
-				placeholder="Attack"
-			/><br />
+			<input type="text" name="stats" placeholder="Attack" /><br />
 			Defense stat:
-			<input
-				type="text"
-				name="stats"
-				placeholder="Defense"
-			/><br />
+			<input type="text" name="stats" placeholder="Defense" /><br />
 			SpAttack stat:
-			<input
-				type="text"
-				name="stats"
-				placeholder="Special Attack"
-			/><br />
+			<input type="text" name="stats" placeholder="Special Attack" /><br />
 			SpDefense stat:
-			<input
-				type="text"
-				name="stats"
-				placeholder="Special Defense"
-			/><br />
+			<input type="text" name="stats" placeholder="Special Defense" /><br />
 			Speed stat:
-			<input
-				type="text"
-				name="stats"
-				placeholder="Speed"
-			/><br />
+			<input type="text" name="stats" placeholder="Speed" /><br />
 			Type:
-			<input
-				type="text"
-				name="type"
-				placeholder="Type"
-			/><br />
+			<input type="text" name="type" placeholder="Type" /><br />
 			<input type="submit" name="" value="Add New Pokemon" />
 		</form>
-        <a href="/pokemon/">Back to Pokedex</a>
+		<a href="/pokemon/">Back to Pokedex</a>
 	</body>
 </html>
 
 <style>
-    body {
-        font-family: 'Pokemon Solid', sans-serif;
+	.container {
+		display: grid;
+	}
+	body {
+		font-family: 'Pokemon Solid', sans-serif;
+		background-image: url("https://imgur.com/UZKEjzG.jpg");
+		-webkit-background-size: cover;
+  		-moz-background-size: cover;
+  		-o-background-size: cover;
+  		background-size: cover;
+	}
+    img {
+        border-style: solid;
+        border-radius: 15px;
+        border-width: 4px;
     }
-    @import url('http://fonts.cdnfonts.com/css/pokemon-solid');
-    </style>
+	@import url("http://fonts.cdnfonts.com/css/pokemon-solid");
+</style>

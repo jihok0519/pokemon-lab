@@ -1,7 +1,7 @@
 const express = require("express");
-const app = express();
 const pokemon = require("./models/pokemon.js");
 const methodOverride = require("method-override");
+const app = express();
 const port = 3000;
 
 app.use(express.urlencoded({ extended: false }));
@@ -40,7 +40,7 @@ app.post("/pokemon/", (req, res) => {
 });
 
 // Edit
-app.get("/pokemon/:id/edit", (req, res) => {
+app.get("/pokemon/:id/edit/", (req, res) => {
 	res.render("edit.ejs", {
 		pokemons: pokemon[req.params.id],
 		index: req.params.id,

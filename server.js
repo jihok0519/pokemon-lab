@@ -21,7 +21,7 @@ app.get("/pokemon/new/", (req, res) => {
 
 // Delete
 app.delete("/pokemon/:id/", (req, res) => {
-    pokemon.splice(req.params.id, 1);
+    pokemon.splice(req.params.id, 1)
 	//redirect back to index route
 	res.redirect("/pokemon/");
 });

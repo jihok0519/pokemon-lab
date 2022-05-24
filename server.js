@@ -21,28 +21,54 @@ app.get("/pokemon/new/", (req, res) => {
 
 // Delete
 app.delete("/pokemon/:id/", (req, res) => {
-	pokemon.splice(req.params.index, 1);
+    pokemon.splice(req.params.id, 1);
 	//redirect back to index route
 	res.redirect("/pokemon/");
 });
 
 // Update
 app.put("/pokemon/:id/", (req, res) => {
-	pokemon[req.params.id] = req.body;
+	let edittedPokemon = {
+        img: req.body.img,
+        name: req.body.name,
+        stats: {
+            hp: req.body.hp,
+            attack: req.body.attack,
+            defense: req.body.defense,
+            spattack: req.body.spattack,
+            spdefense: req.body.spdefense,
+            speed: req.body.speed,
+        },
+        type: req.body.type
+    }
+    pokemon[req.params.id] = edittedPokemon;
 	//redirect to the index page
 	res.redirect("/pokemon/");
 });
 
 // Create
 app.post("/pokemon/", (req, res) => {
-	pokemon.push(req.body);
+    let createdPokemon = {
+        img: req.body.img,
+        name: req.body.name,
+        stats: {
+            hp: req.body.hp,
+            attack: req.body.attack,
+            defense: req.body.defense,
+            spattack: req.body.spattack,
+            spdefense: req.body.spdefense,
+            speed: req.body.speed,
+        },
+        type: req.body.type
+    }
+	pokemon.unshift(createdPokemon);
 	res.redirect("/pokemon/");
 });
 
 // Edit
 app.get("/pokemon/:id/edit/", (req, res) => {
-	res.render("edit.ejs", {
-		pokemons: pokemon[req.params.id],
+    res.render("edit.ejs", {
+        pokemons: pokemon[req.params.id],
 		index: req.params.id,
 	});
 });
